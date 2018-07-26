@@ -1,0 +1,14 @@
+{
+  "name": "react-app",
+  "version": "1.0.0",
+  "description": "React training",
+  "main": "index.js",
+  "repository": "https://github.com/DerejeKitaw/reactLesson.git",
+  "author": "Dereje Kitaw <dereje.kitaw@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1"
+  }
+}
