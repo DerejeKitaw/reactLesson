@@ -1,12 +1,9 @@
-var app = {
-  title : 'ToDo App',
-  subtitle  : 'ToDo app hel to organize your works'
-}
+const idValue = 'my_id';
 var template = (
   <div>
-    <h1>Title: {app.title}</h1>
-    <h3>{app.subtitle}</h3>
+    <h1>Counter</h1>
+    <button id={idValue} className='button'>+1</button>
   </div>);
-
+console.log(template);
 var appRoot = document.getElementById('app')
 ReactDOM.render(template, appRoot);
