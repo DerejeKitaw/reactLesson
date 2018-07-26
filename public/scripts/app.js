@@ -1,17 +1,22 @@
 'use strict';
 
+var app = {
+  title: 'ToDo App',
+  subtitle: 'ToDo app hel to organize your works'
+};
 var template = React.createElement(
   'div',
   null,
   React.createElement(
-    'div',
+    'h1',
     null,
-    'This is JSX from app.js!'
+    'Title: ',
+    app.title
   ),
   React.createElement(
-    'p',
+    'h3',
     null,
-    'paragraph'
+    app.subtitle
   )
 );
 

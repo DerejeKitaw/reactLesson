@@ -1,7 +1,11 @@
-var template =(
+var app = {
+  title : 'ToDo App',
+  subtitle  : 'ToDo app hel to organize your works'
+}
+var template = (
   <div>
-    <div>This is JSX from app.js!</div>
-    <p>paragraph</p>
+    <h1>Title: {app.title}</h1>
+    <h3>{app.subtitle}</h3>
   </div>);
 
 var appRoot = document.getElementById('app')

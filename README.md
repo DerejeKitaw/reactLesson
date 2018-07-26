@@ -199,3 +199,51 @@ var template =(
 var appRoot = document.getElementById('app')
 ReactDOM.render(template, appRoot);
 ```
+### 12_How to use javascript expression
+app.js
+```js
+var name = 'Dereje';
+var age = 40;
+var template = (
+  <div>
+    <div>Name: {name}</div>
+    <div>Age: {age}</div>
+  </div>);
+
+var appRoot = document.getElementById('app')
+ReactDOM.render(template, appRoot);
+```
+ ![react-startup](./doc/09_react_startup.png)
+
+### 13_variable from object
+```js
+var use = {
+  name : 'Dereje',
+  age  : 40
+}
+var template = (
+  <div>
+    <div>Name: {use.name}</div>
+    <div>Age: {use.age}</div>
+  </div>);
+
+var appRoot = document.getElementById('app')
+ReactDOM.render(template, appRoot);
+```
+### 14_Create app with 
+> title/subtitle
+app.js
+```js
+var app = {
+  title : 'ToDo App',
+  subtitle  : 'ToDo app hel to organize your works'
+}
+var template = (
+  <div>
+    <h1>Title: {app.title}</h1>
+    <h3>{app.subtitle}</h3>
+  </div>);
+
+var appRoot = document.getElementById('app')
+ReactDOM.render(template, appRoot);
+```
