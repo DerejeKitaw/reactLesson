@@ -1,20 +1,42 @@
 'use strict';
 
-var idValue = 'my_id';
-var template = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    'Counter'
-  ),
-  React.createElement(
-    'button',
-    { id: idValue, className: 'button' },
-    '+1'
-  )
-);
-console.log(template);
+var app = {
+  title: 'ToDo App',
+  subtitle: 'ToDo app help to organize your works',
+  options: ['a']
+};
+var onFormSubmit = function onFormSubmit(e) {
+  e.preventDefault();
+  var option = e.target.elements.option.value;
+  if (option) {
+    app.options.push(option);
+    e.target.elements.option.value = '';
+    render();
+  }
+};
 var appRoot = document.getElementById('app');
-ReactDOM.render(template, appRoot);
+var render = function render() {
+  var template = React.createElement(
+    'div',
+    null,
+    React.createElement(
+      'form',
+      { onSubmit: onFormSubmit },
+      React.createElement(
+        'div',
+        null,
+        'Number of options ',
+        app.options.length
+      ),
+      React.createElement('input', { type: 'text', name: 'option' }),
+      React.createElement(
+        'button',
+        null,
+        'Add Option'
+      )
+    )
+  );
+
+  ReactDOM.render(template, appRoot);
+};
+render();

@@ -461,3 +461,88 @@ var appRoot = document.getElementById('app')
 ReactDOM.render(template, appRoot);
 ```
 
+## _How to pass events
+```js
+let count = 0;
+
+const addOne = () => {
+  console.log('addOne');
+};
+
+const template = (
+  <div>
+    <h1>Count:{count}</h1>
+    <button onClick={addOne}>+1</button>
+  </div>);
+
+const appRoot = document.getElementById('app')
+ReactDOM.render(template, appRoot);
+```
+![react-startup](./doc/20_react_startup.png)
+
+## _Manual data binding
+```js
+let count = 0;
+
+const minusOne = () => {
+  count--;
+  console.log('minusOne ' + count);
+};
+const addOne = () => {
+  count++;
+  console.log('addOne ' + count);
+};
+const reset = () => {
+  count = 0;
+  console.log('reset ' + count);
+};
+
+const template = (
+  <div>
+    <h1>Count:{count}</h1>
+    <button onClick={addOne}>+1</button>
+    <button onClick={minusOne}>-1</button>
+    <button onClick={reset}>Reset</button>
+  </div>);
+
+const appRoot = document.getElementById('app')
+ReactDOM.render(template, appRoot);
+```
+> Data is updating but JSX is not rendering the update.
+> So re-render we need to put our templae inside a function
+```js
+let count = 0;
+
+const minusOne = () => {
+  count--;
+  renderCounterApp();
+};
+const addOne = () => {
+  count++;
+  renderCounterApp();
+};
+const reset = () => {
+  count = 0;
+  renderCounterApp();
+};
+
+const appRoot = document.getElementById('app');
+
+const renderCounterApp = () => {
+  const template = (
+    <div>
+      <h1>Count:{count}</h1>
+      <button onClick={addOne}>+1</button>
+      <button onClick={minusOne}>-1</button>
+      <button onClick={reset}>Reset</button>
+    </div>
+  );
+  ReactDOM.render(template, appRoot);
+};
+renderCounterApp();
+```
+
+## _Forms and input field
+
+[All react dome events](https://reactjs.org/docs/events.html)
+
