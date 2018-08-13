@@ -20,7 +20,6 @@ const render = () => {
         <div>Number of options {app.options.length}</div>
       <input type="text" name="option"/>
       <button>Add Option</button>
-      <button>Remove All</button>
       </form>
     </div>);
 
